@@ -2,6 +2,11 @@
 
 namespace App\Service\ExpressionParser\Converter;
 
+use App\Service\ExpressionParser\Exceptions\EmptyExpressionException;
+use App\Service\ExpressionParser\Exceptions\IncorrectOperatorException;
+use App\Service\ExpressionParser\Exceptions\UseSpecialOperatorException;
+use App\Service\ExpressionParser\Exceptions\IncorrectExpressionBalanceException;
+
 class RpnConverter implements ConverterInterface
 {
     const MINUS_OPERATOR = "-";
@@ -27,6 +32,10 @@ class RpnConverter implements ConverterInterface
      * @return string
      *
      * @throws \Exception
+     * @throws EmptyExpressionException
+     * @throws UseSpecialOperatorException
+     * @throws IncorrectExpressionBalanceException
+     * @throws IncorrectOperatorException
      */
     public function convert(string $text)
     {
@@ -34,11 +43,11 @@ class RpnConverter implements ConverterInterface
         $convertedStack = [];
 
         if (empty($text)) {
-            throw new \Exception("Convert exception: Expression is empty.");
+            throw new EmptyExpressionException();
         }
 
         if (preg_match("/\|/", $text)) {
-            throw new \Exception("Convert exception: Incorrect operator '|'");
+            throw new UseSpecialOperatorException();
         }
 
         $text = mb_strtolower($text, 'UTF-8');
@@ -80,7 +89,7 @@ class RpnConverter implements ConverterInterface
                 $stack[] = $token;
             } elseif ($token === self::CLOSE_PARENTHESIS_OPERATOR) {
                 if (!array_search(self::OPEN_PARENTHESIS_OPERATOR, $stack)) {
-                    throw new \Exception('Convert exception: Incorrect expression balance.');
+                    throw new IncorrectExpressionBalanceException();
                 }
 
                 for ($j = count($stack) - 1; $j >= 0; --$j) {
@@ -99,10 +108,10 @@ class RpnConverter implements ConverterInterface
                 }
 
                 if (count($stack) > 1) {
-                    throw new \Exception('Convert exception: Incorrect expression balance.');
+                    throw new IncorrectExpressionBalanceException();
                 }
             } else {
-                throw new \Exception("Convert exception: Incorrect operator '$token'.");
+                throw new IncorrectOperatorException($token);
             }
         }
 

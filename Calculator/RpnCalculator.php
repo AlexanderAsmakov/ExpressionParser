@@ -3,6 +3,9 @@
 namespace App\Service\ExpressionParser\Calculator;
 
 use App\Service\ExpressionParser\Converter\RpnConverter;
+use App\Service\ExpressionParser\Exceptions\DivisionByZeroException;
+use App\Service\ExpressionParser\Exceptions\EnoughDataOnTheStackException;
+use App\Service\ExpressionParser\Exceptions\NumberOfOperatorsException;
 
 class RpnCalculator implements CalculatorInterface
 {
@@ -22,6 +25,9 @@ class RpnCalculator implements CalculatorInterface
      * @return int|float
      *
      * @throws \Exception
+     * @throws DivisionByZeroException
+     * @throws NumberOfOperatorsException
+     * @throws EnoughDataOnTheStackException
      */
     public function calculate(string $text)
     {
@@ -34,7 +40,7 @@ class RpnCalculator implements CalculatorInterface
                 array_push($stack, $token);
             } else {
                 if (count($stack) < 2) {
-                    throw new \Exception("Calculate exception: There is not enough data on the stack for the operation '$token'.");
+                    throw new EnoughDataOnTheStackException($token);
                 }
 
                 $b = array_pop($stack);
@@ -47,7 +53,7 @@ class RpnCalculator implements CalculatorInterface
                         break;
                     case $this->converter::DIVISION_OPERATOR:
                         if ($b == 0) {
-                            throw new \Exception("Calculate exception: Division by zero.");
+                            throw new DivisionByZeroException();
                         }
                         $result = $a / $b;
                         break;
@@ -67,7 +73,7 @@ class RpnCalculator implements CalculatorInterface
         }
 
         if (count($stack) > 1) {
-            throw new \Exception("Calculate exception: The number of operators does not correspond to the number of operands.");
+            throw new NumberOfOperatorsException;
         }
 
         return array_pop($stack);

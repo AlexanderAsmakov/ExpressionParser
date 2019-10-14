@@ -15,14 +15,9 @@ class ClientClass
   {
     $parser = new RpnParser();
     
-    return $parser->parse('( 8 + 2 * 5 ) / ( 1 + 3 * 2 - 4 ) / 1');
+    return $parser->parse($expression);
   }
 }
-```
-
-
-```
-В данном случае клиент должен получить: int(6)
 ```
 
 Могут выбрасываться Exceptions, если:

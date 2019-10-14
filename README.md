@@ -1,7 +1,5 @@
 # ExpressionParser
 
-namespace оставил от Symfony, чтобы работало без создания bundle.
-
 Как работать клиенту:
 
 ```

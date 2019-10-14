@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\ExpressionParser\Calculator;
+namespace ExpressionParser\Calculator;
 
 interface CalculatorInterface
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Service\ExpressionParser\Calculator;
+namespace ExpressionParser\Calculator;
 
-use App\Service\ExpressionParser\Converter\RpnConverter;
-use App\Service\ExpressionParser\Exceptions\DivisionByZeroException;
-use App\Service\ExpressionParser\Exceptions\EnoughDataOnTheStackException;
-use App\Service\ExpressionParser\Exceptions\NumberOfOperatorsException;
+use ExpressionParser\Converter\RpnConverter;
+use ExpressionParser\Exceptions\DivisionByZeroException;
+use ExpressionParser\Exceptions\EnoughDataOnTheStackException;
+use ExpressionParser\Exceptions\NumberOfOperatorsException;
 
 class RpnCalculator implements CalculatorInterface
 {

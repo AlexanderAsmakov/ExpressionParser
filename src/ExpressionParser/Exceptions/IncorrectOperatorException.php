@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Service\ExpressionParser\Exceptions;
+namespace ExpressionParser\Exceptions;
 
-class EnoughDataOnTheStackException extends AbstractExpressionParserException
+class IncorrectOperatorException extends AbstractExpressionParserException
 {
     public function __construct($operator)
     {
-        parent::__construct("There is not enough data on the stack for the operation '$operator'.");
+        parent::__construct("Incorrect operator '$operator'.");
 
         $this->data = $operator;
     }

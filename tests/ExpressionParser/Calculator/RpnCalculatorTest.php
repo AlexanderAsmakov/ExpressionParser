@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use App\Service\ExpressionParser\Calculator\RpnCalculator;
+use ExpressionParser\Calculator\RpnCalculator;
 
 class RpnCalculatorTest extends TestCase
 {

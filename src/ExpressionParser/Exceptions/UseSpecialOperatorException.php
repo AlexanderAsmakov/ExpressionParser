@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\ExpressionParser\Exceptions;
+namespace ExpressionParser\Exceptions;
 
 class UseSpecialOperatorException extends AbstractExpressionParserException
 {

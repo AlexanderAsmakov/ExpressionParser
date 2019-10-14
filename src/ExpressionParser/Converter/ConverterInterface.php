@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\ExpressionParser\Converter;
+namespace ExpressionParser\Converter;
 
 interface ConverterInterface {
 

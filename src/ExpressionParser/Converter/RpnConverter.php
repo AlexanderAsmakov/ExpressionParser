@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Service\ExpressionParser\Converter;
+namespace ExpressionParser\Converter;
 
-use App\Service\ExpressionParser\Exceptions\EmptyExpressionException;
-use App\Service\ExpressionParser\Exceptions\IncorrectOperatorException;
-use App\Service\ExpressionParser\Exceptions\UseSpecialOperatorException;
-use App\Service\ExpressionParser\Exceptions\IncorrectExpressionBalanceException;
+use ExpressionParser\Exceptions\EmptyExpressionException;
+use ExpressionParser\Exceptions\IncorrectOperatorException;
+use ExpressionParser\Exceptions\UseSpecialOperatorException;
+use ExpressionParser\Exceptions\IncorrectExpressionBalanceException;
 
 class RpnConverter implements ConverterInterface
 {

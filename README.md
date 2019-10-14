@@ -7,7 +7,7 @@ namespace оставил от Symfony, чтобы работало без соз
 ```
 <?php
 
-use App\Service\ExpressionParser\RpnParser;
+use ExpressionParser\RpnParser;
 
 class ClientClass
 {

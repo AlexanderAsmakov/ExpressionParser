@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use App\Service\ExpressionParser\Converter\RpnConverter;
+use ExpressionParser\Converter\RpnConverter;
 
 class RpnConverterTest extends TestCase
 {

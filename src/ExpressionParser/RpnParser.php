@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Service\ExpressionParser;
+namespace ExpressionParser;
 
-use App\Service\ExpressionParser\Calculator\RpnCalculator;
-use App\Service\ExpressionParser\Exceptions\EmptyExpressionException;
-use App\Service\ExpressionParser\Exceptions\IncorrectOperatorException;
-use App\Service\ExpressionParser\Exceptions\UseSpecialOperatorException;
-use App\Service\ExpressionParser\Exceptions\IncorrectExpressionBalanceException;
-use App\Service\ExpressionParser\Exceptions\DivisionByZeroException;
-use App\Service\ExpressionParser\Exceptions\EnoughDataOnTheStackException;
-use App\Service\ExpressionParser\Exceptions\NumberOfOperatorsException;
+use ExpressionParser\Calculator\RpnCalculator;
+use ExpressionParser\Exceptions\EmptyExpressionException;
+use ExpressionParser\Exceptions\IncorrectOperatorException;
+use ExpressionParser\Exceptions\UseSpecialOperatorException;
+use ExpressionParser\Exceptions\IncorrectExpressionBalanceException;
+use ExpressionParser\Exceptions\DivisionByZeroException;
+use ExpressionParser\Exceptions\EnoughDataOnTheStackException;
+use ExpressionParser\Exceptions\NumberOfOperatorsException;
 
 class RpnParser extends AbstractParser
 {

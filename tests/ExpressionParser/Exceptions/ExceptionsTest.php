@@ -1,15 +1,15 @@
 <?php
 
-use App\Service\ExpressionParser\Exceptions\DivisionByZeroException;
-use App\Service\ExpressionParser\Exceptions\EmptyExpressionException;
-use App\Service\ExpressionParser\Exceptions\EnoughDataOnTheStackException;
-use App\Service\ExpressionParser\Exceptions\IncorrectOperatorException;
-use App\Service\ExpressionParser\Exceptions\IncorrectExpressionBalanceException;
-use App\Service\ExpressionParser\Exceptions\NumberOfOperatorsException;
-use App\Service\ExpressionParser\Exceptions\UseSpecialOperatorException;
+use ExpressionParser\Exceptions\DivisionByZeroException;
+use ExpressionParser\Exceptions\EmptyExpressionException;
+use ExpressionParser\Exceptions\EnoughDataOnTheStackException;
+use ExpressionParser\Exceptions\IncorrectOperatorException;
+use ExpressionParser\Exceptions\IncorrectExpressionBalanceException;
+use ExpressionParser\Exceptions\NumberOfOperatorsException;
+use ExpressionParser\Exceptions\UseSpecialOperatorException;
 use PHPUnit\Framework\TestCase;
 
-class ExceptionTest extends TestCase
+class ExceptionsTest extends TestCase
 {
     public function testDivisionByZeroException()
     {

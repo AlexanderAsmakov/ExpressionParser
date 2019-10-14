@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\ExpressionParser;
+namespace ExpressionParser;
 
 abstract class AbstractParser
 {

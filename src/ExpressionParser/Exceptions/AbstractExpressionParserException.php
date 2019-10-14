@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\ExpressionParser\Exceptions;
+namespace ExpressionParser\Exceptions;
 
 abstract class AbstractExpressionParserException extends \Exception
 {

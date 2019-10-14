@@ -1,5 +1,5 @@
 {
-  "name": "AlexanderAsmakov/ExpressionParser",
+  "name": "avasmakov/expression-parser",
   "description": "PHP parser for mathematical expressions.",
   "keywords": ["parser", "mathematics" ],
   "homepage": "https://github.com/AlexanderAsmakov/ExpressionParser",
